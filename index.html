@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <title>Linker</title>
+  <link rel="stylesheet" href="css/app.css"/>
+</head>
+<body ng-controller="BodyCtrl">
+  <div id="nav" ng-controller='NavCtrl'>
+    <input id="connectHost" ng-disabled="disabled" ng-model='host' placeholder="输入主机地址" type="text" />
+    <button id="connectHostSubmit" ng-disabled="disabled" ng-class="buttonClass" ng-click="connect()" ng-bind-template="{{stateButton}}"></button>
+    <div class="line-wrapper right"><img ng-click="refreshFileList()" align="middle" id="refresh" src="img/refresh.png" width="16px" /></div>
+  </div><!-- /nav -->
+
+  <div id="stage" ng-controller='StageCtrl'>
+    <table class="table-full">
+      <colgroup>
+        <col class="table-files-col-name"></col>
+        <col class="table-files-col-modified"></col>
+      </colgroup>
+      <thead>
+        <tr>
+          <th>文件名</th>
+          <th>修改时间</th>
+          <th>大小</th>
+        </tr>
+      </thead>
+      <tbody class="table-splite">
+        <tr class="clickable" ng-click="download(this)" ng-repeat="file in files"><td ng-bind-template="{{file.name}}"></td><td ng-bind-template="{{convertTime(file.mtime)}}"></td><td ng-bind-template="{{convertSize(file.size)}}"></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="margin-top: 30px; color: gray; font-size: 12px; padding: 10px;">
+    *这只是一个简单的demo程序，实现了部分协议。需要在D盘下创建一个Linker文件夹和一个temp文件夹。下载下来的文件会被放入temp文件夹内。
+  </div>
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+  -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/core.js"></script>
+  <script src="lib/angular/angular.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/directives.js"></script>
+</body>
+</html>

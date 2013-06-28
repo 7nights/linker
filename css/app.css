@@ -1,0 +1,138 @@
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+#nav{
+  background-color: #EEE;
+  padding: 10px;
+  border-bottom: 1px solid #DDD;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', 'Microsoft Yahei';
+  font-size: 13px;
+}
+
+input{
+  outline: none;
+  padding: 4px 4px;
+  font-family: inherit;
+  width: 250px;
+  border: 1px solid #CCC;
+  box-shadow: inset 0px 1px 1px rgba(150, 150, 150, .1);
+  -webkit-transition: box-shadow .3s, border-color .3s;
+}
+
+button{
+  padding: 1px 2px;
+  background: #54B7E6;
+  padding: 3px 8px;
+  color: white;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  border-bottom: 3px solid #2FA4DB;
+  position: relative;
+  top: -1px;
+  -webkit-transition: border-color .3s, opacity .3s;
+}
+button:active{
+  background-color: #78C6EB;
+  -webkit-transition: all 0s;
+}
+
+button.success{
+  background-color: #2ecc71;
+  border-bottom-color: #27B45A;
+}
+button[disabled]{
+  opacity: .5;
+}
+
+input:focus{
+  box-shadow: inset 0px 1px 1px rgba(150, 150, 150, .2);
+  border-color: #81C1FC;
+}
+.table-full{
+  width: 100%;
+}
+th{
+  text-align: left;
+  background-color: #EEE;
+}
+thead{
+  border-bottom: 1px solid #DDD;
+}
+.table-files-col-name{
+  width: 30%;
+}
+
+td, th{
+  padding: 5px 10px;
+}
+
+.table-splite tr:nth-child(even){
+  background-color: #F8F8F8;
+  border-top: 1px solid #EEE;
+  border-bottom: 1px solid #EEE;
+}
+
+table{
+  border-collapse: collapse;
+}
+
+.clickable{
+  cursor: pointer;
+}
+
+.right{
+  float: right;
+}
+.line-wrapper{
+  height: 100%;
+}
+
+#refresh:hover{
+  -webkit-animation: rotate 1s infinite linear;
+  cursor: pointer;
+}
+
+@-webkit-keyframes rotate{
+  0%{
+    -webkit-transform: rotateZ(0deg);
+  }
+  100%{
+    -webkit-transform: rotateZ(360deg);
+  }
+
+}

@@ -1,0 +1,17 @@
+{
+  "main" : "index.html",
+  "name" : "SMGP-demo",
+  "description" : "",
+  "version" : "0.1.0",
+  "window" : {
+    "position" : "center",
+    "min_width" : 400,
+    "min_height" : 200,
+    "frame" : true,
+    "toolbar" : false
+  },
+  "webkit" : {
+    "plugin" : true
+  }
+
+}
